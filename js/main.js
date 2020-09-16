@@ -182,9 +182,6 @@ $(document).ready(function(){
         $('.mobile_new_slider').slick('slickNext');
     });
 
-
-
-
 });
 
 
