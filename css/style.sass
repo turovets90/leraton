@@ -265,6 +265,40 @@ body
 header
   background: #000
   color: #fff
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 99
+  &.fixed
+    position: fixed
+    animation: down .5s linear
+    .contacts_box
+      @media (max-width: 575px)
+        display: none
+    .header_center
+      padding: 5px 0
+    .logo
+      img
+        max-height: 50px
+    .top_menu
+      li
+        a
+          padding-top: 0
+          padding-bottom: 0
+    .main_menu
+      .nav
+        > li
+          > a
+            padding-top: 3px
+            padding-bottom: 3px
+
+@keyframes down
+  0%
+    +transform(translateY(-100%))
+  100%
+    +transform(translateY(0))
+
 
 
 .header_top
@@ -314,7 +348,7 @@ header
   +flex()
   +ai-center()
   span
-    font-size: 10px
+    font-size: 12px
     color: #fff
     margin-right: 16px
     @media (max-width: 575px)
@@ -455,7 +489,7 @@ header
 .user_link
   +flex()
   +ai-center()
-  font-size: 10px
+  font-size: 12px
   color: #fff
   text-decoration: none
   margin-left: 20px
@@ -480,9 +514,9 @@ header
     +j-center()
     +border-radius(50%)
     color: #fff
-    font-size: 8px
-    width: 13px
-    height: 13px
+    font-size: 10px
+    width: 15px
+    height: 15px
     position: absolute
     top: -5px
     right: 0
@@ -503,16 +537,17 @@ header
     +j-center()
     +border-radius(50%)
     color: #fff
-    font-size: 8px
-    width: 13px
-    height: 13px
+    font-size: 10px
+    width: 15px
+    height: 15px
     position: absolute
     top: -5px
     right: 0
 
 
 
-
+.page-noscroll
+  overflow: hidden
 
 
 .main_menu
@@ -521,15 +556,18 @@ header
     position: fixed
     width: 80%
     height: 100%
-    right: 0
+    left: 0
     top: 0
     background: $red
     color: #fff
-    padding: 15px
+    padding: 50px 15px 15px
     +transition($transition_default)
-    +transform(translateX(100%))
+    +transform(translateX(-100%))
     opacity: 0
     z-index: 9999
+
+    @media (max-width: 575px)
+      width: 90%
     &.open
       opacity: 1
       +transform(translateX(0))
@@ -538,9 +576,12 @@ header
     width: 30px
     height: 30px
     background: #fff
-    position: relative
+    position: absolute
     margin-left: 5px
     margin-bottom: 20px
+    right: 0
+    top: 0
+
     &::before, &::after
       +b_a
       +m_a
@@ -560,13 +601,15 @@ header
     li
       @media (max-width: 991px)
         position: relative
+        text-align: center
+
 
     .arrow
       width: 30px
       height: 30px
       position: absolute
       right: 0
-      top: 3px
+      top: 0
       &.act
         &::before
           display: none
@@ -663,10 +706,12 @@ header
         padding: 30px 20px
 
       @media (max-width: 991px)
-        padding: 20px 0 10px 20px
+        padding: 20px 0 10px 0
 
       .sub_menu
         > li
+          @media (max-width: 991px)
+            padding: 0 30px
 
           @media (min-width: 992px)
             text-align: center
@@ -1109,7 +1154,7 @@ footer
     +ai-center
     +j-center
     min-height: 85px
-    font-size: 10px
+    font-size: 12px
     color: #fff
     @media (max-width: 1200px)
       min-height: 50px
@@ -1624,7 +1669,7 @@ footer
 
 
 .page_desc
-  font-size: 12px
+  font-size: 13px
   line-height: 25px
   h2, .h2
     font-size: 20px
