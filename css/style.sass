@@ -610,17 +610,24 @@ header
       position: absolute
       right: 0
       top: 0
+      +transition($transition_default)
       &.act
-        &::before
-          display: none
+        +transform(rotate(-180deg))
+
       &::before, &::after
         +b_a
-        width: 20px
-        height: 1px
-        +m_a
+        width: 15px
+        height: 2px
+        top: 0
+        bottom: 0
+        margin: auto
         background: #fff
+      &:after
+        right: 3px
+        +transform(rotate(-45deg))
       &::before
-        +transform(rotate(90deg))
+        left: 3px
+        +transform(rotate(45deg))
 
       @media (min-width: 992px)
         display: none
