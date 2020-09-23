@@ -276,8 +276,10 @@ header
     .contacts_box
       @media (max-width: 575px)
         display: none
+    .header_top
+      display: none
     .header_center
-      padding: 5px 0
+      display: none
     .logo
       img
         max-height: 50px
@@ -461,9 +463,8 @@ header
 
 .header_center
   .ai_center
-    &:last-of-type
-      @media (max-width: 767px)
-        +j-end
+
+
 
 
 
@@ -493,6 +494,10 @@ header
   color: #fff
   text-decoration: none
   margin-left: 20px
+  &:hover
+    color: $red
+    span
+      color: $red
   span
     display: inline-block
     margin-left: 10px
@@ -601,7 +606,7 @@ header
     li
       @media (max-width: 991px)
         position: relative
-        text-align: center
+        text-align: left
 
 
     .arrow
@@ -718,7 +723,7 @@ header
       .sub_menu
         > li
           @media (max-width: 991px)
-            padding: 0 30px
+            padding: 0 30px 0 10px
 
           @media (min-width: 992px)
             text-align: center
@@ -760,7 +765,6 @@ header
 
 .mm_btn
   position: relative
-  margin-left: 15px
   .hamburger
     position: relative
     width: 30px
@@ -1072,10 +1076,21 @@ strong
   +ai-center
   +j-beetween
   margin: 65px 0 30px
+  position: relative
   @media (max-width: 1200px)
     margin: 55px 0
-    @media (max-width: 991px)
-      margin: 30px 0
+  @media (max-width: 991px)
+    margin: 30px 0
+  @media (max-width: 575px)
+    +j-center
+    .slick_arrows
+      position: absolute
+      right: 0
+      top: 0
+      bottom: 0
+      margin: auto
+
+
 
   span
     font-size: 28px
@@ -1088,6 +1103,7 @@ strong
       font-size: 22px
     @media (max-width: 575px)
       font-size: 20px
+      padding-right: 10px
 
 
 
@@ -1871,3 +1887,6 @@ textarea.form-control
       margin-bottom: 25px
 
 
+@media (max-width: 575px)
+  h1, .h1, h2, .h2, h3,.h3, .page_title
+    text-align: center
