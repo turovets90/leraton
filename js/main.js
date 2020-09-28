@@ -185,9 +185,10 @@ $(document).ready(function(){
 
     $(window).resize(function(){
         var header_height = $('header').outerHeight();
+        var header_bottom = $('.header_bottom').outerHeight();
         $('header').next().css({'margin-top': header_height+'px'});
         $(window).scroll(function(){
-            if ($(this).scrollTop() > header_height) {
+            if ($(this).scrollTop() > header_height-header_bottom) {
                 $('header').addClass('fixed');
             } else /*if($(this).scrollTop() < 1)*/{
                 $('header').removeClass('fixed');
